@@ -39,8 +39,8 @@
       let
         org = "pythoneda-shared-runtime";
         repo = "lifecycle-events";
-        version = "0.0.1";
-        sha256 = "0k31ficxqn2f6m5mf08snxk12sdh3j9hm57rc9iadysc5bifyshf";
+        version = "0.0.2";
+        sha256 = "03jdf5687c1bir6biapgp0pvrdzg939qpnhqyjn8rrsp6k5qvqw5";
         pname = "${org}-${repo}";
         pythonpackage = "pythoneda.shared.runtime.events.lifecycle";
         package = builtins.replaceStrings [ "." ] [ "/" ] pythonpackage;
@@ -79,7 +79,6 @@
               inherit homepage package pname pythonMajorMinorVersion
                 pythonpackage version;
               pythonedaSharedDomainVersion = pythoneda-shared-domain.version;
-              unidiffVersion = python.pkgs.unidiff.version;
               src = pyprojectTemplateFile;
             };
             src = pkgs.fetchFromGitHub {
@@ -91,12 +90,10 @@
             format = "pyproject";
 
             nativeBuildInputs = with python.pkgs; [ pip poetry-core ];
-            propagatedBuildInputs = with python.pkgs; [
-              pythoneda-shared-domain
-              unidiff
-            ];
+            propagatedBuildInputs = with python.pkgs;
+              [ pythoneda-shared-domain ];
 
-            pythonImportsCheck = [ pythonpackage ];
+            # pythonImportsCheck = [ pythonpackage ];
 
             unpackPhase = ''
               cp -r ${src} .

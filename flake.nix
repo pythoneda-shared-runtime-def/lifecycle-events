@@ -51,7 +51,7 @@
         maintainers = with pkgs.lib.maintainers;
           [ "rydnr <github@acm-sl.org>" ];
         archRole = "E";
-        space = "D";
+        space = "R";
         layer = "D";
         nixosVersion = builtins.readFile "${nixos}/.version";
         nixpkgsRelease =

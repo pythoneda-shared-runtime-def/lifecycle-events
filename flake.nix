@@ -39,8 +39,8 @@
       let
         org = "pythoneda-shared-runtime";
         repo = "lifecycle-events";
-        version = "0.0.2";
-        sha256 = "03jdf5687c1bir6biapgp0pvrdzg939qpnhqyjn8rrsp6k5qvqw5";
+        version = "0.0.3";
+        sha256 = "1a7w796pks8g7n7dnxpc1zpvbgsy6n5miilrwxlpz6sv84xjps21";
         pname = "${org}-${repo}";
         pythonpackage = "pythoneda.shared.runtime.events.lifecycle";
         package = builtins.replaceStrings [ "." ] [ "/" ] pythonpackage;

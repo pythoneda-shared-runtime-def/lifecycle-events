@@ -30,7 +30,7 @@
       inputs.flake-utils.follows = "flake-utils";
       inputs.nixos.follows = "nixos";
       inputs.pythoneda-shared-banner.follows = "pythoneda-shared-banner";
-      url = "github:pythoneda-shared-def/domain/0.0.27";
+      url = "github:pythoneda-shared-def/domain/0.0.28";
     };
   };
   outputs = inputs:
@@ -39,8 +39,8 @@
       let
         org = "pythoneda-shared-runtime";
         repo = "lifecycle-events";
-        version = "0.0.3";
-        sha256 = "1a7w796pks8g7n7dnxpc1zpvbgsy6n5miilrwxlpz6sv84xjps21";
+        version = "0.0.4";
+        sha256 = "1zav4vy88vqaj8x50g18gyvmi2rkn0ck7h23zfwi5hfq904lj4m6";
         pname = "${org}-${repo}";
         pythonpackage = "pythoneda.shared.runtime.events.lifecycle";
         package = builtins.replaceStrings [ "." ] [ "/" ] pythonpackage;
